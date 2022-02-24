@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<a class="btn btn-danger float-end" href="~/Book/Create">新增</a>
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><a href="~/Book/Details/@item.ID">@item.ID</a></td>
+            <td>@item.Author</td>
+            <td>@item.Price</td>
+        </tr>
+    }
+</table>
+@section Scripts {
+}

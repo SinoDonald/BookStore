@@ -22,7 +22,11 @@ namespace BookStore.Controllers
         }
         public ActionResult Details(int id)
         {
-            ViewBag.id = id;
+            ViewBag.id = id;              
+            return View();
+        }
+        public ActionResult Create()
+        {
             return View();
         }
 
@@ -38,6 +42,12 @@ namespace BookStore.Controllers
         public JsonResult GetBook(int id)
         {
             var ret = _service.Get(id);
+            return Json(ret);
+        }
+        [HttpPost]
+        public JsonResult CreateBook(Book book)
+        {
+            var ret = _service.Insert(book);
             return Json(ret);
         }
         protected override void Dispose(bool disposing)

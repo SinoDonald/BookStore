@@ -8,18 +8,19 @@
     <table class="table">
         <tr>
             <td>ID</td>
-            <td><input type="text" name="id" ng-model="Book.ID" /></td>
+            <td><input type="text" name="id" ng-model="newBook.ID" /></td>
         </tr>
         <tr>
             <td>Author</td>
-            <td><input type="text" name="author" ng-model="Book.Author" /></td>
+            <td><input type="text" name="author" ng-model="newBook.Author" /></td>
         </tr>
         <tr>
             <td>Price</td>
-            <td><input type="text" name="price" ng-model="Book.Price" /></td>
+            <td><input type="text" name="price" ng-model="newBook.Price" /></td>
         </tr>
     </table>
-    <a class="btn btn-primary" href="~/Book1/Create/0">新增</a>    
+    <a class="btn btn-primary" href="~/Book1/Create/0">新增</a>
+    <input type="submit" class="btn btn-success" value="新增" />
 </div>
 @section Scripts {
     <script>

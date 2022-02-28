@@ -25,9 +25,9 @@ namespace BookStore.Controllers
             ViewBag.id = id;              
             return View();
         }
-        public ActionResult Create()
+        public ActionResult Edit(int id)
         {
-            return View();
+            return View(id);
         }
 
         //Web Api -----------
@@ -45,9 +45,21 @@ namespace BookStore.Controllers
             return Json(ret);
         }
         [HttpPost]
-        public JsonResult CreateBook(Book book)
+        public JsonResult Create(Book book)
         {
             var ret = _service.Insert(book);
+            return Json(ret);
+        }
+        [HttpPost]
+        public JsonResult Edit(Book book)
+        {
+            var ret = _service.Update(book);
+            return Json(ret);
+        }
+        [HttpPost]
+        public JsonResult Delete(int id)
+        {
+            var ret = _service.Delete(id);
             return Json(ret);
         }
         protected override void Dispose(bool disposing)

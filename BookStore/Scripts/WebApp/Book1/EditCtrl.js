@@ -10,14 +10,8 @@ app.service('appService', ['$http', function ($http) {
 }]);
 app.controller('EditCtrl', ['$scope', '$window', 'appService', function ($scope, $window, appService) {
     $scope.Book = {};
-    appService.EditBook({ id: $window.bookid})
+    appService.EditBook({ id: $window.Book })
         .then(function (ret) {
             $scope.Book = ret.data;
         });
-    }
-
-    //appService.EditBook({ id: $window.id })
-    //    .then(function (ret) {
-    //        $scope.Book = ret.data;
-    //    });
 }]);

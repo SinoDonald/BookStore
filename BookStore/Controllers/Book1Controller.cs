@@ -32,7 +32,7 @@ namespace BookStore.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.id = id;
-            return View(id);
+            return View();
         }
         public ActionResult Delete(int id)
         {

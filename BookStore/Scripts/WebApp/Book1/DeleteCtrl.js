@@ -4,13 +4,13 @@ app.run(['$http', '$window', function ($http, $window) {
     $http.defaults.headers.common['__RequestVerificationToken'] = $('input[name=__RequestVerificationToken]').val();
 }]);
 app.service('appService', ['$http', function ($http) {
-    this. = function (o) {
-        return $http.post("Book1/GetBook", o);
+    this.DeleteBook = function (o) {
+        return $http.post("Book1/DeleteBook", o);
     };
 }]);
-app.controller('DetailsCtrl', ['$scope', '$window', 'appService', function ($scope, $window, appService) {
+app.controller('DeleteCtrl', ['$scope', '$window', 'appService', function ($scope, $window, appService) {
     $scope.Book = {};
-    appService.GetBook({ id: $window.bookid })
+    appService.DeleteBook({ id: $window.bookid })
         .then(function (ret) {
             $scope.Book = ret.data;
         });

@@ -22,12 +22,22 @@ namespace BookStore.Controllers
         }
         public ActionResult Details(int id)
         {
-            ViewBag.id = id;              
+            ViewBag.id = id;
             return View();
+        }
+        public ActionResult Create()
+        {
+            return View(new Book());
         }
         public ActionResult Edit(int id)
         {
+            ViewBag.id = id;
             return View(id);
+        }
+        public ActionResult Delete(int id)
+        {
+            ViewBag.id = id;
+            return View();
         }
 
         //Web Api -----------
@@ -45,19 +55,19 @@ namespace BookStore.Controllers
             return Json(ret);
         }
         [HttpPost]
-        public JsonResult Create(Book book)
+        public JsonResult CreateBook(Book book)
         {
             var ret = _service.Insert(book);
             return Json(ret);
         }
         [HttpPost]
-        public JsonResult Edit(Book book)
+        public JsonResult EditBook(Book book)
         {
             var ret = _service.Update(book);
             return Json(ret);
         }
         [HttpPost]
-        public JsonResult Delete(int id)
+        public ActionResult DeleteBook(int id)
         {
             var ret = _service.Delete(id);
             return Json(ret);

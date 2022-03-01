@@ -6,20 +6,11 @@
 @Html.AntiForgeryToken()
 <div ng-controller="DeleteCtrl">
     <table class="table">
-        @*<tr>
-            <td>ID</td>
-            <td>{{Book.ID}}</td>
-        </tr>*@
         <tr>
-            <td>Author</td>
-            <td>{{Book.Author}}</td>
-        </tr>
-        <tr>
-            <td>Price</td>
-            <td>{{Book.Price}}</td>
+            <td>確定要刪除</td>
         </tr>
     </table>
-    <a class="btn btn-danger" href="~/Book1/Delete/{{Book.ID}}">刪除</a>
+    <input class="btn btn-primary" type="button" value="確定" ng-click="DeleteBook()" />
 </div>
 @section Scripts {
     <script>

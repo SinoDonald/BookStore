@@ -4,13 +4,17 @@ app.run(['$http', '$window', function ($http, $window) {
     $http.defaults.headers.common['__RequestVerificationToken'] = $('input[name=__RequestVerificationToken]').val();
 }]);
 app.service('appService', ['$http', function ($http) {
-    this.Create = function (o) {
-        return $http.post("Book1/Create", o);
+    this.CreateBook = function (o) {
+        return $http.post("Book1/CreateBook", o);
     };
+}]);
 app.controller('CreateCtrl', ['$scope', '$window', 'appService', function ($scope, $window, appService) {
-    $scope.Book = {};
-    appService.Create({ id: $window.bookid})
+    $scope.Books = [];
+    appService.CreateBook({})
         .then(function (ret) {
-            $scope.Book = ret.data;
+            $scope.Books = ret.data;
+        })
+        .catch(function (ret) {
+            alert('Error');
         });
 }]);

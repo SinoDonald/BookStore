@@ -27,7 +27,7 @@ namespace BookStore.Controllers
         }
         public ActionResult Create()
         {
-            return View(new Book());
+            return View();
         }
         public ActionResult Edit(int id)
         {
@@ -61,7 +61,7 @@ namespace BookStore.Controllers
             return Json(ret);
         }
         [HttpPost]
-        public JsonResult EditBook(Book book)
+        public JsonResult UpdateBook(Book book)
         {
             var ret = _service.Update(book);
             return Json(ret);

@@ -12,14 +12,14 @@
         </tr>
         <tr>
             <td>Author</td>
-            <td><input type="text" ng-model="Author" name="Author" /></td>
+            <td><input type="text" ng-model="author" value={{Book.Author}} /></td>
         </tr>
         <tr>
             <td>Price</td>
-            <td><input type="number" ng-model="Price" name="Price" /></td>
+            <td><input type="number" ng-model="price" value={{Book.Price}} /></td>
         </tr>
     </table>
-    <input class="btn btn-primary" type="button" value="確定" ng-click="DeleteBook()" />
+    <input class="btn btn-primary" type="button" value="確定" ng-click="EditBook()" />
 </div>
 @section Scripts {
     <script>

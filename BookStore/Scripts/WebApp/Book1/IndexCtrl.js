@@ -9,7 +9,6 @@ app.service('appService', ['$http', function ($http) {
     };
 }]);
 app.controller('IndexCtrl', ['$scope', '$window', 'appService', function ($scope, $window, appService) {
-    //initial value
     $scope.Books = [];
     appService.GetAllBooks({})
         .then(function (ret) {

@@ -12,7 +12,8 @@ app.service('appService', ['$http', function ($http) {
     };
 }]);
 
-app.controller('CreateCtrl', ['$scope', '$window', 'appService', '$rootScope', function ($scope, $window, appService, $rootScope) {
+app.controller('CreateCtrl', ['$scope', '$window', 'appService', function ($scope, $window, appService) {
+
     $scope.Books = {};
 
     $scope.CallCreateBook = function () {

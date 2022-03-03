@@ -16,7 +16,7 @@ app.service('appService', ['$http', function ($http) {
     };
 }]);
 
-app.controller('EditCtrl', ['$scope', '$window', 'appService', '$rootScope', function ($scope, $window, appService, $rootScope) {
+app.controller('EditCtrl', ['$scope', '$window', 'appService', function ($scope, $window, appService) {
 
     $scope.Book = {};
 
@@ -28,7 +28,6 @@ app.controller('EditCtrl', ['$scope', '$window', 'appService', '$rootScope', fun
     $scope.CallUpdateBook = function () {
         appService.UpdateBook($scope.Book).then(function (ret) {
             $window.location.href = '/Book1/Index';
-        });
-        //$window.location.href = '/Book1/Index';   
+        });  
     }
 }]);

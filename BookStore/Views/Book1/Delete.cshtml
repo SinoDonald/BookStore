@@ -7,10 +7,11 @@
 <div ng-controller="DeleteCtrl">
     <table class="table">
         <tr>
-            <td>已刪除</td>
+            <td>確認要刪除?</td>
         </tr>
     </table>
-    <a class="btn btn-primary" href="~/Book1/Index/">回首頁</a>
+    <input class="btn btn-primary" type="button" value="確定" ng-click="CallDeleteBook()" />
+    <a ng-href="~/Book1/Index">  返回首頁</a>
 </div>
 @section Scripts {
     <script>

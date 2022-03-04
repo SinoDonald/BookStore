@@ -20,8 +20,7 @@ app.controller('EditCtrl', ['$scope', '$window', 'appService', function ($scope,
 
     $scope.Book = {};
 
-    appService.GetBook({ id: $window.bookid })
-        .then(function (ret) {
+    appService.GetBook({ id: $window.bookid }).then(function (ret) {
             $scope.Book = ret.data;
         });
 

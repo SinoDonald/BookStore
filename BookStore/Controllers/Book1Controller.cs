@@ -1,4 +1,5 @@
-﻿using BookStore.Models;
+﻿using BookStore.Filters;
+using BookStore.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace BookStore.Controllers
 {
+    [MyAuthorize]
     public class Book1Controller : Controller
     {
         //private IBookRepository _service;

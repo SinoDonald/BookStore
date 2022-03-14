@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+<h2>Details</h2>
+@using (Html.BeginForm("Delete", "Book", FormMethod.Post))
+{
+    @Html.Hidden("ID", new { value = Model.ID })
+    <table class="table">
+        <tr>
+            <td>ID</td>
+            <td>@Model.ID.ToString()</td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>@Model.Author</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>@Model.Price.ToString()</td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" href="~/Book/Edit/@Model.ID.ToString()">編輯</a>
+    <button class="btn btn-danger"
+            type="submit">
+        刪除
+    </button>
+}

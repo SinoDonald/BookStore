@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAngularjs.cshtml";
+}
+<div ng-controller="IndexCtrl">
+    <a class="btn btn-danger float-end" href="~/Book1/Create">新增</a>
+    <table class="table">
+        <tr ng-repeat="item in Books">
+            <td><a href="~/Book1/Details/{{item.ID}}">{{item.ID}}</a></td>
+            <td>{{item.Author}}</td>
+            <td>{{item.Price}}</td>
+        </tr>
+    </table>
+</div>
+@section Scripts {
+    <script src="~/Scripts/WebApp/Book1/IndexCtrl.js"></script>
+}

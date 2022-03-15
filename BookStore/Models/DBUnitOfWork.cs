@@ -10,11 +10,19 @@ namespace BookStore.Models
 {
     public class DBUnitOfWork : IDisposable
     {
+        //插入 Repository
+        private BookDBRepository _bookRepository;
+        public BookDBRepository Book
+        {
+            get { return _bookRepository ?? (_bookRepository = new BookDBRepository(this.Transaction)); }
+        }
+
         private IDbConnection _connection;
         private IDbTransaction _transaction;
         private bool _disposed;
         public DBUnitOfWork() : this(ConfigurationManager.ConnectionStrings["DefultConnection"].ConnectionString)
         {
+
         }
         public DBUnitOfWork(string connectionString)
         {
@@ -33,8 +41,10 @@ namespace BookStore.Models
             }
         }
         //---------------------------
+        //重設 Repository
         private void ResetRepositories()
         {
+            //_flowQueueRepository = null;
         }
         public virtual void Commit()
         {

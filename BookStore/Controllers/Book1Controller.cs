@@ -16,7 +16,7 @@ namespace BookStore.Controllers
         private BookService _service;
         public Book1Controller()
         {
-            _service = new BookService(new BookTxtRepository());
+            _service = new BookService(/*new BookDBRepository()*/);
         }
         public ActionResult Index()
         {

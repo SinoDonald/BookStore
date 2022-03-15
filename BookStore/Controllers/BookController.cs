@@ -15,7 +15,7 @@ namespace BookStore.Controllers
         public BookController()
         {
             //_service = new BookService(); < -- 移除相依性
-            _service = new BookService(new BookDBRepository());
+            //_service = new BookService(new BookDBRepository());
         }
         public ActionResult Index()
         {

@@ -132,7 +132,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookDBRepository_.cs" />
     <Compile Include="Models\BookDBRepository.cs" />
+    <Compile Include="Models\BookService_.cs" />
     <Compile Include="Models\BookService.cs" />
     <Compile Include="Models\BookTxtRepository.cs" />
     <Compile Include="Models\DBUnitOfWork.cs" />

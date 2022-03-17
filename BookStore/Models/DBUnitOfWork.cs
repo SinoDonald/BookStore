@@ -20,7 +20,7 @@ namespace BookStore.Models
         private IDbConnection _connection;
         private IDbTransaction _transaction;
         private bool _disposed;
-        public DBUnitOfWork() : this(ConfigurationManager.ConnectionStrings["DefultConnection"].ConnectionString)
+        public DBUnitOfWork() : this(ConfigurationManager.ConnectionStrings["BookConnection"].ConnectionString)
         {
 
         }

@@ -9,8 +9,7 @@ namespace BookStore.Models
         private DBUnitOfWork _dbContext;
         public BookService()
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Prj\ASP.Net\BookStore\BookStore\App_Data\Database1.mdf;Integrated Security=True";
-            _dbContext = new DBUnitOfWork(connectionString);
+            _dbContext = new DBUnitOfWork();
         }
         public List<Book> GetAll()
         {
